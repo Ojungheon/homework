@@ -1,0 +1,234 @@
+body {
+    font-family: 'Gamja Flower', cursive, 'Noto Sans KR', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    font-family: 'Gugi', sans-serif;
+    background-color: #ffcc00;
+    color: #0a0a0ad8;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.mewo{
+    position: relative;
+    left: 3%;
+    bottom: 120px;
+    z-index: 2;
+}
+
+hr{
+    color: #ffcc00;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+#menu{
+    width: 700px;
+    height: 50px;
+    background-color: #f9f9f9;
+    color: black;
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 20;
+    position: relative;
+}
+
+#menu > ul > li {
+    float:left;
+    width: 140px;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#menu > ul > li :hover{
+    color: red;
+}
+
+#menu > ul > li > ul {
+    width: 130px;
+    display: none;
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#menu > ul > li:hover > ul{
+    display: block;
+}
+
+#menu > ul > li> ul > li:hover {
+    color: red;
+    transition: ease 1s;
+}
+
+section {
+    padding: 20px;
+}
+
+#top_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+}
+
+#user-options a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 5px 10px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+
+/* 그리드 중앙 정렬 */
+#baby {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, auto);
+    gap: 10px;
+    width: 1400px;
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    justify-content: center; /* 그리드 아이템 중앙 정렬 */
+    place-items: center; /* 모든 아이템을 중앙 정렬 */
+}
+
+/* 그리드 첫 번째 줄을 4칸으로 합친 제목과 버튼 */
+.title-container {
+    grid-column: span 4;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+/* 제목 스타일 */
+.title-container h1 {
+    font-size: 2.5em;
+    font-family: 'GmarketSansBold';
+    margin-bottom: 10px;
+}
+
+/* 부제목 스타일 */
+.title-container h5 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-family: 'Gamja Flower', cursive, 'Noto Sans KR', sans-serif;
+    color: red;
+}
+
+/* 버튼 스타일 */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #ffcc00;
+    color: #444;
+}
+
+/* 그리드 아이템 */
+.grid-item {
+    text-align: center;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3 ease;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.2em;
+}
+
+/* overlay 텍스트를 중앙에 배치하고 기본적으로 숨기기 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 검정 배경 */
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 기본적으로 보이지 않음 */
+    transition: opacity 0.3s ease; /* 나타나는 전환 효과 */
+    border-radius: 10px;
+}
+
+/* 마우스를 올렸을 때 이미지가 투명해지고, overlay가 나타남 */
+.grid-item:hover img {
+    opacity: 0.3; /* 이미지 투명도를 낮춤 */
+}
+
+.grid-item:hover .overlay {
+    opacity: 1; /* overlay 텍스트가 나타남 */
+}
+
+#homeButton{
+    width: 26px;
+    height: 26px;
+    vertical-align: center;
+    justify-content: center;
+    top: 6px;
+    position: relative;
+}

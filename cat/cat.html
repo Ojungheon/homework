@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(ﾐዋ ﻌ ዋﾐ)환영합니다! 집사하우스 입니다.</title>
+    <link rel="stylesheet" href="cat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gugi&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+    var isAnimating = false;
+    var slideWidth = 1400; // 슬라이드 너비 설정
+    var animationSpeed = 200; // 애니메이션 속도 설정 (밀리초 단위)
+
+    // 오른쪽(다음) 슬라이드
+    $("#rightButton").click(function(event){
+        event.preventDefault();  // 기본 동작(페이지 이동) 방지
+        if (isAnimating) return;
+        isAnimating = true;
+
+        $(".myframe>ul").animate(
+            {"margin-left": -slideWidth + "px"}, 
+            animationSpeed, 
+            function(){
+                $(".myframe>ul").css("margin-left", "0px");
+                $(".myframe>ul").append($(".myframe>ul").children().first());
+                isAnimating = false;
+            }
+        );
+    });
+
+    // 왼쪽(이전) 슬라이드
+    $("#leftButton").click(function(event){
+        event.preventDefault();  // 기본 동작(페이지 이동) 방지
+        if (isAnimating) return;
+        isAnimating = true;
+
+        $(".myframe>ul").prepend($(".myframe>ul").children().last());
+        $(".myframe>ul").css("margin-left", -slideWidth + "px");
+
+        $(".myframe>ul").animate(
+            {"margin-left": "0px"},
+            animationSpeed, 
+            function(){
+                isAnimating = false;
+            }
+        );
+    });
+});
+
+    </script>
+</head>
+<body>
+    <header>
+        <div id="top_wrapper">
+            <div id="user-options">
+                <a href="#">로그인</a> | 
+                <a href="#">회원가입</a> |
+                <a href="cat.html"><img src="img/Home.png" alt="" id="homeButton"></a>
+            </div>
+            <div id="search-bar">
+                <input type="text" placeholder="검색어를 입력하세요" id="search-input">
+                <button type="submit" id="search-button">검색</button>
+            </div>
+        </div>
+
+        <div id="bottom_wrapper">
+            <h1> 집사 하우스 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🐈</h1>
+            <p>고양이와 함께 하는 삶을 위한 모든 것!</p>
+            <img src="img/냐옹.png" alt="냐옹" class="mewo">
+            <!-- <img src="img/cat_dance.gif" id="cat_dance_1" alt="고양이댄스">
+            <img src="img/cat_dance.gif" id="cat_dance_2" alt="고양이댄스">
+            <img src="img/cat_dance.gif" id="cat_dance_3" alt="고양이댄스">
+            <img src="img/cat_dance.gif" id="cat_dance_4" alt="고양이댄스">
+            <img src="img/cat_dance.gif" id="cat_dance_5" alt="고양이댄스">
+            <img src="img/cat_dance.gif" id="cat_dance_6" alt="고양이댄스"> -->
+        </div>
+    </header>
+
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">고양이 분양</a>
+                <ul>
+                    <li><a href="#">분양절차</a></li>
+                    <li><a href="adoption.html">신규 분양</a></li>
+                    <li><a href="#">프리미엄 분양</a></li>
+                </ul>
+            </li>
+            <li><a href="#">고양이 웨딩</a>
+                <ul>
+                    <li><a href="#">고양이 교배</a></li>
+                    <li><a href="#">사후관리</a></li>
+                </ul>
+            </li>
+            <li><a href="#">고양이 호텔링</a>
+                <ul>
+                    <li><a href="#">캡슐호텔</a></li>
+                    <li><a href="#">서비스 및 시설</a></li>
+                    <li><a href="#">캣그루밍&캣택시</a></li>
+                </ul>
+            </li>
+            <li><a href="#">정보 마당</a>
+                <ul>
+                    <li><a href="#types">추천 반려묘</a></li>
+                    <li><a href="#care">반려 고양이 관리법</a></li>
+                    <li><a href="#tips">고양이 밈</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <hr color="#ffcc00">
+
+    <div class="banner">
+        <div class="myframe">
+            <ul>
+                <li><img src="img/mv_01.jpg" alt=""></li>
+                <li><img src="img/mv_02.jpg" alt=""></li>
+                <li><img src="img/mv_03.jpg" alt=""></li>
+                <li><img src="img/mv_04.jpg" alt=""></li>
+                <li><img src="img/mv_05.jpg" alt=""></li>
+            </ul>
+            <a href="#"><img src="img/free-icon-left-arrow-271220.png" alt="" id="leftButton"></a>
+            <a href="#"><img src="img/free-icon-right-arrow-271228.png" alt="" id="rightButton"></a>
+        </div>
+    </div>
+    
+        
+
+    </section>
+
+    <section id="types">
+        <h2>추천 반려묘😻</h2>
+        <div class="cat-type">
+            <h3><a href="https://namu.wiki/w/%EC%8A%A4%EC%BD%94%ED%8B%B0%EC%8B%9C%20%ED%8F%B4%EB%93%9C?from=%EC%8A%A4%EC%BD%94%ED%8B%B0%EC%89%AC%20%ED%8F%B4%EB%93%9C">스코티쉬 폴드</a></h3>
+            <p>접힌 귀로 유명한 귀여운 고양이.</p>
+            <img src="img/스코티쉬 폴드1.png" alt="스코티쉬" class="scottish">
+            <img src="img/스코티쉬2.jpg" alt="스코티쉬2" class="scottish2">
+            <img src="img/스코티쉬3.jpg" alt="스코티쉬3" class="scottish3">
+        </div>
+        <div class="cat-type">
+            <h3><a href="https://namu.wiki/w/%EB%9F%AC%EC%8B%9C%EC%95%88%20%EB%B8%94%EB%A3%A8">러시안 블루</a></h3>
+            <p>우아한 회색 털과 초록색 눈이 매력적!</p>
+            <img src="img/러시안블루.jpg" alt="러시안블루" class="russianBlue">
+            <img src="img/러시안블루2.jpeg" alt="러시안블루2" class="russianBlue2">
+            <img src="img/러시안블루3.webp" alt="러시안블루3" class="russianBlue3">
+        </div>
+        <!-- 추가 고양이 종류들 -->
+        <div class="cat-type">
+            <h3><a href="https://namu.wiki/w/%EB%B8%8C%EB%A6%AC%ED%8B%B0%EC%8B%9C%20%EC%87%BC%ED%8A%B8%ED%97%A4%EC%96%B4">브리티시 쇼트헤어</a></h3>
+            <p>온순하고 차분한 냥이를 원한다면</p>
+            <img src="img/브리티쉬.jpg" alt="브리티시1" class="brittish">
+            <img src="img/브리티쉬2.jpg" alt="브리티시2" class="brittish2">
+            <img src="img/브리티쉬3.jpg" alt="브리티시3" class="brittish3">
+           
+        </div>
+        <div class="cat-type">
+            <h3><a href="https://namu.wiki/w/%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B8%20%EC%87%BC%ED%8A%B8%ED%97%A4%EC%96%B4">아메리칸 쇼트헤어</a></h3>
+            <p>여기까지는 혼자사는 사람이 키우기 쉬운 고양이 입니다.</p>
+            <img src="img/아메리칸1.jpg" alt="아메리칸1" class="american">
+            <img src="img/아메리칸2.jpg" alt="아메리칸2" class="american2">
+            <img src="img/아메리칸3.jpg" alt="아메리칸3" class="american3">
+           
+        </div>
+    </section>
+
+    <section id="care">
+        <h2><a href="catAdmin.html" target="_blank">고양이 관리법😸</a></h2>
+        <p>고양이 관리에 대한 기본적인 팁과 정보.</p>
+        <!-- 고양이 관리 정보들 -->
+    </section>
+
+    <section id="tips">
+        <h2>고양이 밈😹</h2>
+        <p>유쾌하고 귀여운 다양한 고양이 밈!</p>
+        <!-- 고양이 기르는 팁들 -->
+    </section>
+
+    <footer>
+        <p>2024-10-04 반려묘 찾기</p>
+    </footer>
+    
+</body>
+</html>
